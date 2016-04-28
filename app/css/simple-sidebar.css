@@ -86,6 +86,13 @@
 
 }
 
+#img-logo {
+    position: relative;
+    left: 15px;
+}
+
+
+
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus {
     text-decoration: none;
@@ -96,6 +103,7 @@
     font-size: 18px;
     line-height: 60px;
     font-family: 'Play', sans-serif;
+    margin-bottom: 34px;
 }
 
 .sidebar-nav > .sidebar-brand a {
