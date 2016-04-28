@@ -27,7 +27,7 @@
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    border-right: 4px solid #F0563D;
+    border-right: 4px solid blue;
     font-family: 'Play', sans-serif;
 
 
@@ -79,8 +79,8 @@
 .sidebar-nav li a:hover {
     text-decoration: none;
     color: #fff;
-    background: red;
-    border-left: 4px solid #ddd;
+    background: blue;
+    border-left: 4px solid white;
     opacity: 0.9;
 
 
