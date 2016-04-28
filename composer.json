@@ -1,0 +1,21 @@
+{
+    "name": "wilson/aberje",
+    "description": "Simple system for updating Software",
+    
+    "require": {
+        "silex/silex": "1.0.*@dev",
+	"twig/twig": ">=1.8,<2.0-dev",
+	"symfony/twig-bridge": "~2.3",
+	"twig/extensions": "~1.0"
+    },
+
+
+
+
+    "authors": [
+        {
+            "name": "Wilson Novaes",
+            "email": "wilsonnovaes00@hotmail.com"
+        }
+    ]
+}
