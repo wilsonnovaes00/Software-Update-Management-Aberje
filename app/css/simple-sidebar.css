@@ -33,6 +33,13 @@
 
 }
 
+.input-group.h2 {
+    position: relative;
+    left: 272px;
+}
+
+
+
 #wrapper.toggled #sidebar-wrapper {
     width: 264px;
 }

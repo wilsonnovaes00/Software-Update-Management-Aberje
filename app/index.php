@@ -28,6 +28,23 @@ $app->get('/', function () use ($app) {
     return $app['twig']->render('home.twig');
 });
 
+$app->get('/atualizar', function () use ($app) {
+
+
+    return $app['twig']->render('atualizar.twig');
+});
+
+
+$app->get('/teste', function () use ($app) {
+
+
+    return $app['twig']->render('teste.html');
+});
+
+
+
+
+
 
 $app->get('/contact', function () use ($app) {
 

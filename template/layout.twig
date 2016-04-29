@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html ng-app>
 
 <head>
     {% block head %}
@@ -23,7 +23,6 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Bree+Serif|Play' rel='stylesheet' type='text/css'>
-    <!-- Custom CSS -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
     {% endblock %}
@@ -36,7 +35,13 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+
+
     <![endif]-->
+
+
+
 
 </head>
 
@@ -61,13 +66,15 @@
 
             </li>
             <li>
-                <a href="/"><i class="fa fa-tachometer"  style="color: white; aria-hidden="true"></i>
-                    Dashboard</a>
-            </li>
-            <li>
-                <a href="/users"><i class="fa fa-desktop" style="color: white;" aria-hidden="true"></i>
+                <a href="/"><i class="fa fa-desktop" style="color: white;" aria-hidden="true"></i>
                     Computadores</a>
             </li>
+
+            <li>
+                <a href="/atualizar"><i class="fa fa-refresh"  style="color: white; aria-hidden="true"></i>
+                    Atualizações</a>
+            </li>
+
             <li>
                 <a href="#"><i class="fa fa-plus" style="color: white;" aria-hidden="true"></i> Grupos</a>
             </li>
@@ -86,10 +93,16 @@
 </div>
 <!-- /#wrapper -->
 
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-<script src="js/scripts.js"></script>
-<script src="js/bootstrap.min.js"></script>
+{% block javascripts %}
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script>
+
+
+{% endblock %}
 
 
 
