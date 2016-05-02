@@ -1,34 +1,13 @@
-<!doctype html>
-<!-- estamos dizendo ‘quero usar angularjs’ -->
-<html ng-app>
-<head>
-    <!-- definido a versão do angular que queremos  -->
-    <script
-            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+{% extends "layout.twig" %}
+
+{% block title "Contact" %}
 
 
-    <!-- aqui criamos um js que terá as function -->
-    <script src="todo.js">
-
-        function hello($scope){
-            $scope.name="world AngularJS \O/";
-
-        }
-
-        angular.module('myApp', []).config(function($interpolateProvider){
-            $interpolateProvider.startSymbol('{[{').endSymbol('}]}');
-        });
+{% block content %}
 
 
 
-    </script>
-    <title>Insert title here</title>
-</head>
-<body>
-{{ '{{hello}}' }}
 
-
-<!-- chamamos a funcao que está no .js -->
 <div ng-controller="hello">
     <!-- chamamos a variavel que declaramos no .js  -->
     Hello {[{ name }]}
@@ -43,6 +22,4 @@
     <label>Inform Price</label>
     <input	type="number" ng-model="price" required="required" />
 
-</div>
-</body>
-</html>
+{% endblock %}
