@@ -39,7 +39,7 @@ $app->get('/atualizar', function () use ($app) {
 $app->get('/teste', function () use ($app) {
 
 
-    return $app['twig']->render('teste.html');
+    return $app['twig']->render('teste.twig');
 });
 
 

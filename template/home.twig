@@ -1,25 +1,93 @@
-{% extends "layout.twig" %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html ng-app="helloApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-{% block title "Home" %}
-
-
-{% block content %}
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Crud</h1>
-                    <p>
+    <title>Hello AngularJS - Hello World</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Bree+Serif|Play' rel='stylesheet' type='text/css'>
+    <link href="css/simple-sidebar.css" rel="stylesheet">
 
 
 
-                    </p>
-                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+
+    <script>
+        var helloApp = angular.module("helloApp", []);
+        helloApp.controller("HelloCtrl", function($scope) {
+            $scope.name = "Calvin Hobbes";
+        });
+    </script>
+
+</head>
+<body ng-controller="HelloCtrl">
+
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <div id="logo-top">
+
+            <img src="../img/logo.png" width="220"  id="img-logo" />
+
+
+        </div>
+
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+
+
+            </li>
+            <li>
+                <a href="/"><i class="fa fa-desktop" style="color: white;" aria-hidden="true"></i>
+                    Computadores</a>
+            </li>
+
+            <li>
+                <a href="/atualizar"><i class="fa fa-refresh"  style="color: white; aria-hidden="true"></i>
+                    Atualizações</a>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa fa-plus" style="color: white;" aria-hidden="true"></i> Grupos</a>
+            </li>
+
+
+            <li>
+                <a href="/contact"><i class="fa fa-envelope" style="color: white;" aria-hidden="true"></i> Contato</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper --->
+
+
+
+    {% verbatim %}
+
+    <div style="padding-top: 30px">
+        <div style="padding: 0px 0px 20px 30px">
+            <h4>Hello {{ name }} How are you doing today</h4></div>
+        <form class="form-horizontal" role="form" method="post" action="#">
+            <div class="form-group">
+                <label class="col-md-1 control-label">Name</label>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="firstname"
+                           ng-model="name">
                 </div>
             </div>
-        </div>
+        </form>
     </div>
-    <!-- /#page-content-wrapper -->
-{% endblock %}
+    {% endverbatim %}
+
+    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+
+
+
+
+
+</body>
+</html>
 
