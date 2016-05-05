@@ -1,7 +1,8 @@
 <!doctype html>
-<html myApp>
+<html ng-app="helloApp">
 
 <head>
+
     {% block head %}
 
     <meta charset="utf-8">
@@ -9,15 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
     {% endblock %}
 
 
     <title>{% block title "Crud Silex" %}</title>
 
-    {% block stylesheets %}
-
-
+    {% block sty %}
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
@@ -25,7 +25,17 @@
     <link href='https://fonts.googleapis.com/css?family=Bree+Serif|Play' rel='stylesheet' type='text/css'>
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
-    {% endblock %}
+    <script>
+        var helloApp = angular.module("helloApp", []);
+        helloApp.controller("HelloCtrl", function($scope) {
+            $scope.name = "Calvin Hobbes";
+        });
+
+
+    </script>
+
+
+
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -40,11 +50,11 @@
     <![endif]-->
 
 
-
-
 </head>
 
-<body>
+<body ng-controller="HelloCtrl">
+
+
 
 
 
@@ -86,22 +96,33 @@
     </div>
     <!-- /#sidebar-wrapper --->
 
-    {% block content "" %}
+    {% block content "" %}{% endblock %}
+
+       {% verbatim %}
+
+            <div style="padding-top: 30px">
+                <div style="padding: 0px 0px 20px 30px">
+                    <h4>Hello {{ name }} How are you doing today</h4></div>
+                <form class="form-horizontal" role="form" method="post" action="#">
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">Name</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="firstname"
+                                   ng-model="name">
+                        </div>
+                    </div>
+                </form>
+            </div>
+       {% endverbatim %}
+
 
 
 </div>
-<!-- /#wrapper -->
 
-{% block javascripts %}
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
 
-
-{% endblock %}
 
 
 
@@ -114,15 +135,6 @@
 </script>
 
 </body>
-
-
-
-
-
-
-
-
-
 
 
 

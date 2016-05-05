@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html ng-app="helloApp">
+<html ng-app="myApp">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
@@ -16,73 +16,103 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
 
     <script>
-        var helloApp = angular.module("helloApp", []);
+        var helloApp = angular.module("myApp", []);
         helloApp.controller("HelloCtrl", function($scope) {
             $scope.name = "Calvin Hobbes";
         });
+
+        var countryApp = angular.module('myApp', []);
+        countryApp.controller('CountryCtrl', ['$scope', '$http', function (scope, http){
+            http.get('countries.json').success(function(data) {
+                scope.countries = data;
+            });
+        }]);
+
+
+        var CtrlLista = function($scope) {
+
+            $scope.pessoas = [
+                {nome: "Maria", cidade: "São Paulo"},
+                {nome: "João", cidade: "Salvador"},
+                {nome: "Tico", cidade: "Curitiba"},
+                {nome: "Marta", cidade: "Pirapora"}
+            ];
+
+        };
+
+
+
+
+
+
     </script>
 
 </head>
 <body ng-controller="HelloCtrl">
 
-<div id="wrapper">
+    <div id="wrapper" >
 
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <div id="logo-top">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <div id="logo-top">
 
-            <img src="../img/logo.png" width="220"  id="img-logo" />
+                <img src="../img/logo.png" width="220"  id="img-logo" />
 
 
+            </div>
+
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+
+
+                </li>
+                <li>
+                    <a href="/"><i class="fa fa-desktop" style="color: white;" aria-hidden="true"></i>
+                        Computadores</a>
+                </li>
+
+                <li>
+                    <a href="/atualizar"><i class="fa fa-refresh"  style="color: white; aria-hidden="true"></i>
+                        Atualizações</a>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-plus" style="color: white;" aria-hidden="true"></i> Grupos</a>
+                </li>
+
+
+                <li>
+                    <a href="/contact"><i class="fa fa-envelope" style="color: white;" aria-hidden="true"></i> Contato</a>
+                </li>
+            </ul>
         </div>
 
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-
-
-            </li>
-            <li>
-                <a href="/"><i class="fa fa-desktop" style="color: white;" aria-hidden="true"></i>
-                    Computadores</a>
-            </li>
-
-            <li>
-                <a href="/atualizar"><i class="fa fa-refresh"  style="color: white; aria-hidden="true"></i>
-                    Atualizações</a>
-            </li>
-
-            <li>
-                <a href="#"><i class="fa fa-plus" style="color: white;" aria-hidden="true"></i> Grupos</a>
-            </li>
-
-
-            <li>
-                <a href="/contact"><i class="fa fa-envelope" style="color: white;" aria-hidden="true"></i> Contato</a>
-            </li>
-        </ul>
-    </div>
-    <!-- /#sidebar-wrapper --->
 
 
 
-    {% verbatim %}
-
-    <div style="padding-top: 30px">
-        <div style="padding: 0px 0px 20px 30px">
-            <h4>Hello {{ name }} How are you doing today</h4></div>
-        <form class="form-horizontal" role="form" method="post" action="#">
-            <div class="form-group">
-                <label class="col-md-1 control-label">Name</label>
-                <div class="col-md-3">
-                    <input type="text" class="form-control" name="firstname"
-                           ng-model="name">
+        <div ng-controller="CountryCtrl">
+            <div class="col-md-6">
+                <h2>Custom search field</h2>
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control " placeholder="Buscar" ng-model="busca" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-small" type="button" style="padding: 9px;">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                    </div>
                 </div>
             </div>
-        </form>
-    </div>
-    {% endverbatim %}
+        </div>
 
-    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+
+
+
+
+
+
+
 
 
 
